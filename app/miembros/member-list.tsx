@@ -35,10 +35,14 @@ export function MemberList() {
 
   const filteredMiembros = miembros.filter(
     (miembro) =>
-      miembro.nombre.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      miembro.cedula.includes(searchTerm) ||
-      miembro.numeroAsociado.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      (miembro.email && miembro.email.toLowerCase().includes(searchTerm.toLowerCase())),
+      miembro.nombre?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      false ||
+      miembro.cedula?.includes(searchTerm) ||
+      false ||
+      miembro.numeroAsociado?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      false ||
+      miembro.email?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      false,
   )
 
   if (loading) {
